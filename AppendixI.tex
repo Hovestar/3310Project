@@ -1,0 +1,28 @@
+\section{Appendix I}
+
+\subsection{Assumptions}
+Let $A \in \R^{2x2}$
+
+$A = $
+\begin{tabular}{(c c)}
+a & b\\
+c & d\\
+\end[tabular}
+
+$a+b=1$\\
+$c+d=1$\\
+$a$ is the probability of moving from state $O$ to state $O$ in one turn.\\
+$b$ is the probability of moving from state $O$ to state $T$ in one turn.\\
+$c$ is the probability of moving from state $T$ to state $O$ in one turn.\\
+$b$ is the probability of moving from state $T$ to state $T$ in one turn.
+
+Let $XY_n$ be the event of moving from state $X$ to $Y$ in $n$ turns. \\
+Let $P(X_n)$ be the probability of being in state $X$ on turn $n$.\\
+Let $X$,$Y$ and $Z$ be generically either states $O$ or $T$.
+
+\subsection{Derivation without Markov Models}
+
+(1) $P(XY_2) = P(OY_1)*P(O_1)+P(TY_1)*P(T_1)$\\
+(2) $P(Z_{n}) = P(XZ_1)*P(X_{n-1})$
+
+
