@@ -1,13 +1,14 @@
-\section{Appendix I}
+\section{Appendix I: Proving Markov Models Work}
+\subsection{2x2 matrices}
+\subsubsection{Assumptions}
 
-\subsection{Assumptions}
 Let $A \in \mathbb{R}^{2\times2}$
 
 $A =
-\begin{bmatrix}
+\begin{pmatrix}
   a & b\\
   c & d\\
-\end{bmatrix}
+\end{pmatrix}
 $
 
 $a+b=1$\\
@@ -21,9 +22,40 @@ Let $XY_n$ be the event of moving from state $X$ to $Y$ in $n$ turns. \\
 Let $P(X_n)$ be the probability of being in state $X$ on turn $n$.\\
 Let $X$,$Y$ and $Z$ be generically either states $O$ or $T$.
 
-\subsection{Derivation without Markov Models}
+\subsubsection{Derivation for 2x2}
 
-(1) $P(XY_2) = P(OY_1) \times P(O_1)+P(TY_1) \times P(T_1)$\\
-(2) $P(Z_{n}) = P(XZ_1) \times P(X_{n-1})$
+(1) $P(XY_2) = P(OY_1) \times P(O_1|X_0)+P(TY_1) \times P(T_1|X_0)$\\
+(2) $P(Z_1|X_0) = P(XZ_1)$\\
+(3) $P(XY_2) = P(OY_1) \times P(XO_1)+P(TY_1) \times P(XT_1)$
 
+This general formula can be used to find the odds of going from state to state in 2 turns.\\
+$P(OO_2) = P(OO_1) \times P(OO_1)+P(OT_1) \times P(TO_1) = a \times a + b \times c$\\
+$P(OT_2) = P(OO_1) \times P(OT_1)+P(OT_1) \times P(TT_1) = a \times b + b \times d$\\
+$P(TO_2) = P(TO_1) \times P(OO_1)+P(TT_1) \times P(TO_1) = c \times a + d \times c$\\
+$P(TT_2) = P(TO_1) \times P(OT_1)+P(TT_1) \times P(TT_1) = c \times b + d \times d$
+\[
+A^2 = 
+\left(
+\begin{array}{c c}
+a \times a+b \times c & a \times b+b \times d \\
+a \times c+c \times d & b \times c+d \times d \\
+\end{array}
+\right)
+=
+\left(
+\begin{array}{c c}
+P(OO_2) & P(OT_2) \\
+P(TO_2) & P(TT_2) \\
+\end{array}
+\right) \]
 
+\subsection{n \times n matrices}
+\subsubsection{Assumptions}
+Let  $A \in \mathbb{R}^{n \times n}$ where $a_{i,j}$ is the entry of A in the $i^{th}$ row and $j^{th}$ column.\\
+$$\sum_{j} a_{i,j} = 1$$.
+
+Let $(O_iO_j)_n$ be the event of moving from state $i$ to state $j$ in $n$ turns.\\
+Let $P(T_{i,n})$ be the event of being in state $i$ on turn $n$.
+
+\subsubsection{Derivation}
+$$P((O_iO_j)_n) =  \sum_{k} P(O_kO_j) \times P(O_{k,turn}|O_{i,turn_0})$$ 
