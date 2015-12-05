@@ -1,33 +1,23 @@
 \section{Introduction}
 
-The game of Yahtzee, where players roll six-sided dice multiple times, and
-calculate their scores based on the values of the dice. As with many games
-that utilize dice, propability and the ability to make predictions plays a great
-part in generating a high score.
-
-Markov Probability Models are state based conditional directed graphs that
-allow predictions on systems where independence cannot be assumed. Graphs can
-be represented as matrices, which are where Markov systems gain their power.
-We would like to use these methods to analyze the game of Yahtzee in order to
-predict the best strategies for fun (and profit).
-
 \subsection{What is Yahtzee?}
 
 Yahtzee is a game where players roll six-sided dice. After each roll, the
 player has the option to roll any number of the five dice again (up to a total
 of 3 rolls). Then, the values of the dice are evaluated and scored. For example,
-points could be owned for two of a kind, or full house.
+a player can score a round based on three of a kind, sixes, or full house.
 
 This process is continued for 13 rounds. However, the same categories for scoring
-cannot be used more than once per game (set of 13 rounds). Finally, the scores
-are totaled from each round, with the player with the highest score winning the
-game.
+cannot be used more than once per game (set of 13 rounds). For example, if three of
+a kind or used to score one round, then the player cannot user three of a kind to
+score another round. Finally, the scores are totaled from each round, with the
+player with the highest score winning the game.
 
 \subsection{Using Markov Models to Analyze Yahtzee}
 
-As Yahtzee revolves around rolling dice, players have an equal chance of
-winning the game. Theoretically, victory should be based on luck and not
-strategy.
+Markov Probability Models are state based conditional directed graphs that
+allow predictions on systems where independence cannot be assumed. Graphs can
+be represented as matrices, which are where Markov systems gain their power.
 
 Markov Probability Models are a good fit for analyzing Yahtzee, since each
 die can be represented as having six states, ranging from one to six, and also
