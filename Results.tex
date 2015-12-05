@@ -1,3 +1,164 @@
 \section{Results}
 
+For the sake of brevity the derivations of the individual probabilities will be left to Appendix 2. In order to express the matrices in integers they will be written as $M=D^{-1}P$ where $D$ is a diagonal matrix and $P$ has elements $p_{i,j}$, the number of ways to move from state $i$ to state $j$. Along with the $M$,$P$,$D$ matrices we will define $E \in \mathbb{R}$to be the expected value $\vec{s} \in \mathbb{R}^n$ to be the scores for the states and $\vec{x} \n \mathbb{R}^n$ to be incoming state distribution. The value of $E=\vec{x}*M^3*\vec{s}$.
+
+
+
+\subsection{Probability of rolling a specific number}
+\[
+D=
+\left(
+\begin{array}{c c c c c c}
+7776 &0&0&0&0&0\\
+0 & 1296&0&0&0&0\\
+0 &0&216&0&0&0\\
+0 &0&0&36&0&0\\
+0 &0&0&0&6&0\\
+0&0&0&0&0&1
+\end{array}
+\right)
+\]
+\[
+P=
+\left(
+\begin{array}{c c c c c c}
+3125 & 3125 & 1250 & 250 & 25 & 1\\
+0 & 625 & 500 & 150 & 20 & 1\\
+0 & 0 & 125 & 75 & 15 & 1\\
+0 & 0 & 0 & 25 & 10 & 1\\
+0 & 0 & 0 & 0 & 5 & 1\\
+0 & 0 & 0 & 0 & 0 & 1
+\end{array}
+\right)
+\]
+\[
+\vec{s}=
+\left(
+\begin{array}{c}
+0n\\
+1n\\
+2n\\
+3n\\
+4n\\
+5n
+\end{array}
+\right)
+\]
+\[
+\vec{x}=
+\left(
+\begin{array}{c c c c c c}
+1&0&0&0&0&0
+\end{array}
+\right)
+\]
+
+Rolling for a specific number happens on the "top" of the scorecard and a score for the specific number is assigned by multiplying the number of dice of that number by the numbers. The expected value in terms of the die rolled for, n, is $2.1065*n$. The states are rolling 5,4,3,2,1,0 dice respectively. 
+
+\subsection{Probability of getting a Yatzee}
+
+\[
+D=
+\left(
+\begin{array}{c c c c c c}
+7776& 0 	&0	&0	&0\\
+0 	& 216	&0	&0	&0\\
+0 	&0		&36	&0	&0\\
+0 	&0		&0	&6	&0\\
+0 	&0		&0	&0	&1
+\end{array}
+\right)
+\]
+
+\[
+P=
+\left(
+\begin{array}{c c c c c}
+720 & 5400 & 1500 & 150 & 6 \\
+0 & 120 & 80 & 15 & 1 \\
+0 & 0 & 25 & 10 & 1 \\
+0 & 0 & 0 & 5 & 1 \\
+0 & 0 & 0 & 0 & 1
+\end{array}
+\right)
+\]
+
+\[
+\vec{s}=
+\left(
+\begin{array}{c}
+0\\
+0\\
+0\\
+0\\
+50
+\end{array}
+\right)
+\]
+\[
+\vec{x}=
+\left(
+\begin{array}{c c c c c}
+1&0&0&0&0
+\end{array}
+\right)
+\]
+
+Rolling for a Yatzee gives an expected value of $2.3014$ points. The states of the matrix are in oder rolling 5,3,2,1,0 dice while having the rest match.
+
+\subsection{Probability of getting a Full House}
+
+\[
+D=
+\left(
+\begin{array}{c c c c c c}
+
+7776&0	& 0 	& 0		&0	&0\\
+0	&36	& 0 	& 0		&0	&0\\
+0 	&0	& 36	& 0		&0	&0\\
+0 	&0	& 0		& 36	&0	&0\\
+0 	&0	& 0		& 0		&6	&0\\
+0 	&0	& 0		& 0		&0	&1
+\end{array}
+\right)
+\]
+
+
+\[
+P=
+\left(
+\begin{array}{c c c c c c}
+720 & 3600 & 6 & 1350 & 1800 & 300\\
+0 & 12 & 0 & 4 & 8 & 2\\
+0 & 0 & 1 & 30 & 0 & 5\\
+0 & 0 & 0 & 5 & 0 & 1\\
+0 & 0 & 0 & 0 & 4 & 2\\
+0 & 0 & 0 & 0 & 0 & 1\\
+\end{array}
+\right)
+\]
+
+\[
+\vec{s}=
+\left(
+\begin{array}{c}
+0\\
+0\\
+0\\
+0\\
+0\\
+25
+\end{array}
+\right)
+\]
+\[
+\vec{x}=
+\left(
+\begin{array}{c c c c c c}
+1&0&0&0&0&0
+\end{array}
+\right)
+\]
+
+The expected value of going for a full house is 7.8431. The states of the full house are rolling all five dice, having a set of 2 and a set of 1, having a set of three (essentially a Yatzee), having a set of three and a set of one, having two sets of 2, and having a Full House, in that order. 
 
