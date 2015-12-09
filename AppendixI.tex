@@ -1,6 +1,5 @@
-\section{Appendix I: Proving Markov Models Work}
-\subsection{2x2 matrices}
-\subsubsection{Assumptions}
+\section{Appendix I: Proving Markov Models Work in 2x2 case}
+\subsection{Assumptions}
 
 Let $A \in \mathbb{R}^{2\times2}$
 
@@ -22,7 +21,7 @@ Let $XY_n$ be the event of moving from state $X$ to $Y$ in $n$ turns. \\
 Let $P(X_n)$ be the probability of being in state $X$ on turn $n$.\\
 Let $X$,$Y$ and $Z$ be generically either states $O$ or $T$.
 
-\subsubsection{Derivation for 2x2}
+\subsection{Derivation}
 
 (1) $P(XY_2) = P(OY_1) \times P(O_1|X_0)+P(TY_1) \times P(T_1|X_0)$\\
 (2) $P(Z_1|X_0) = P(XZ_1)$\\
@@ -48,14 +47,3 @@ P(OO_2) & P(OT_2) \\
 P(TO_2) & P(TT_2) \\
 \end{array}
 \right) \]
-
-\subsection{n \times n matrices}
-\subsubsection{Assumptions}
-Let  $A \in \mathbb{R}^{n \times n}$ where $a_{i,j}$ is the entry of A in the $i^{th}$ row and $j^{th}$ column.\\
-$$\sum_{j} a_{i,j} = 1$$.
-
-Let $(O_iO_j)_n$ be the event of moving from state $i$ to state $j$ in $n$ turns.\\
-Let $P(T_{i,n})$ be the event of being in state $i$ on turn $n$.
-
-\subsubsection{Derivation}
-$$P((O_iO_j)_n) =  \sum_{k} P(O_kO_j) \times P(O_{k,turn}|O_{i,turn_0})$$ 

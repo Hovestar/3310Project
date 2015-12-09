@@ -2,7 +2,12 @@
 	
 	We will be using Markov Models to find the probability of the events. 
 Markov models are graphs of events, that have weighted edges with the probability of their occurrence. 
-This graph is then converted into a matrix where the values in row $n$ column $i$ represent the odds of moving from $n$ to $i$. 
+This graph is then converted into a matrix where the values in row $n$ column $i$ represent the odds of moving from state $n$ to $i$. 
 This is a useful formulation because if you take the product of two of these matrices then it shows the odds of going from one state to another after 2 changes of state. 
 A proof, mostly to convince myself, is in Appendix I for the two by two case.
 
+We use this to represent the probability to get certain outcome from a starting state when the outcome doesn't depend on path. For example to path to getting a yatzee doesn't matter, all that matters is the outcome, and the hopefully 50 points that come along with it. 
+
+Now rather than having to find the odds for each possibility and generalize those for n changes of state, we can find the odds of changing from each state to another and the generalsation to n state changes is done for us. 
+
+We also express the markov matrix as the product of two matrices, that we denote as $D$ and $P$. $D$ is a diagonal matrix that has the integer number of possible ways to move from the state of the row/column that it belongs to

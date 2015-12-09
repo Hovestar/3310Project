@@ -1,0 +1,29 @@
+\section{Appedix II: Getting the odds}
+
+\subsection{Yatzee}
+
+\subsubsection{rolling 0 dice}
+This now is nice and easy there is ony one way for the dice to do anything, and thats to stay the same. So there is a \frac{1,1} in column 5.
+
+Total rolls: $6^0=1$
+\subsubsection{rolling 1 die}
+Five of the six sides do not match the other 4 dice, so for column 4 there's 5 possibilities, and there's one way to match the other dice, so for column 5 theres 1 possibility.
+
+Total rolls: $6^1=6$
+\subsubsection{rolling 2 dice}
+There's $5^2$ ways to not match, ${2 \choose 1}*5$ ways to match one of the two, and 1 way to match both.
+
+Total rolls: $6^2=36$
+\subsubsection{rolling 3 dice}
+Three dice is the one state that's a little tricky, because if the three dice match and aren't the number I was saving I should switch numbers. 
+
+There's 1 way to roll a yatzee, ${3 \choose 2}*5$ ways to move to rolling 1 die, ${3 \choose 1}*5^2$ ways to rolling 2 dice plus an additional 5 ways where the dice match but don't match the two that were saved, to a total of ${3 \choose 1}*5^2+5$. Finally theres $5^3-5$ ways to stay at rolling 3 dice. 
+
+Total rolls: $6^3=216$
+
+\subsubsection{rolling 5 dice}
+Five dice is quite nice, because all the cases are special in the same way, simply that there isn't a number that it going for. 
+
+I can make a generic formula for this, with a stipulation for the last cases. Let $n$ be the number of dice you'll save in the next round then there's ${5 \choose n}*6^{6-n}$ ways to roll that, and in the case of returning to rolling all dice is where $n = 1$. 
+
+Total rolls: $6^5=7776$
