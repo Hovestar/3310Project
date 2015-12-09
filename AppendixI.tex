@@ -1,5 +1,6 @@
-\section{Appendix I: Proving Markov Models Work in 2x2 case}
-\subsection{Assumptions}
+\section{Appendix I: Proving Markov Models Work}
+\subsection{2 $\times$ 2 matrices}
+\subsubsection{Assumptions}
 
 Let $A \in \mathbb{R}^{2\times2}$
 
@@ -33,7 +34,7 @@ $P(OT_2) = P(OO_1) \times P(OT_1)+P(OT_1) \times P(TT_1) = a \times b + b \times
 $P(TO_2) = P(TO_1) \times P(OO_1)+P(TT_1) \times P(TO_1) = c \times a + d \times c$\\
 $P(TT_2) = P(TO_1) \times P(OT_1)+P(TT_1) \times P(TT_1) = c \times b + d \times d$
 \[
-A^2 = 
+A^2 =
 \left(
 \begin{array}{c c}
 a \times a+b \times c & a \times b+b \times d \\
@@ -47,3 +48,5 @@ P(OO_2) & P(OT_2) \\
 P(TO_2) & P(TT_2) \\
 \end{array}
 \right) \]
+
+

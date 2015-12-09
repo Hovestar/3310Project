@@ -1,3 +1,5 @@
+\usepackage[utf8]{inputenc, graphixc, caption, fullpage}
+
 \section{Formulation}
 	
 	We will be using Markov Models to find the probability of the events. 
@@ -11,3 +13,23 @@ We use this to represent the probability to get certain outcome from a starting 
 Now rather than having to find the odds for each possibility and generalize those for n changes of state, we can find the odds of changing from each state to another and the generalsation to n state changes is done for us. 
 
 We also express the markov matrix as the product of two matrices, that we denote as $D$ and $P$. $D$ is a diagonal matrix that has the integer number of possible ways to move from the state of the row/column that it belongs to
+
+\subsection{Graphical Example}
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{image11.jpeg}
+  \label{Figure 1: Probability transition diagram for a 3-state Markov chain}
+\end{figure}
+
+Because we can use a matrix to represent a directed graph, we can use this matrix
+to apply a weight to the edits and predict the outcome of events. Figure 1
+shows an example of a graph and the corresponding matrix.\footnote{http://www.intechopen.com/books/matlab-a-fundamental-tool-for-scientific-computing-and-engineering-applications-volume-2/wireless-channel-model-with-markov-chains-using-matlab}
+
+To find the odds of a transition, $P$ can be multiplied by the column vector
+$\mathbf{x}=({P_A, P_B, P_C})^T$, where $P_X$ is the probability that the system
+is in state $X$. So, $P\mathbf{x}$ results in the probability after one set
+of changes, and $P(P\mathbf{x})$ results in the probability after two state
+changes. This can be simplified to $P(P\mathbf{x} = (PP)\mathbf{x} = P^2\mathbf{x}$.
+This can be further generalized to state that the probability after $n$ state
+changes is: $P^n\mathbf{x}$. In the case of Yahtzee, we can use this to optimize
+how we play so that we can consistently beat other players.
