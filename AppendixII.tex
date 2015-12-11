@@ -11,28 +11,28 @@ Five of the six sides do not match the other 4 dice, so for column 4 there's 5 p
 
 Total rolls: $6^1=6$
 \subsubsection{rolling 2 dice}
-There's $5^2$ ways to not match, ${2 \choose 1}*5$ ways to match one of the two, and 1 way to match both.
+There's $5^2$ ways to not match, ${2 \choose 1}\times5$ ways to match one of the two, and 1 way to match both.
 
 Total rolls: $6^2=36$
 \subsubsection{rolling 3 dice}
-Three dice is the one state that's a little tricky, because if the three dice match and aren't the number I was saving I should switch numbers. 
+Three dice is the one state that's a little tricky, because if the three dice match and aren't the number I was saving I should switch numbers.
 
-There's 1 way to roll a Yahtzee, ${3 \choose 2}*5$ ways to move to rolling 1 die, ${3 \choose 1}*5^2$ ways to rolling 2 dice plus an additional 5 ways where the dice match but don't match the two that were saved, to a total of ${3 \choose 1}*5^2+5$. Finally theres $5^3-5$ ways to stay at rolling 3 dice. 
+There's 1 way to roll a Yahtzee, ${3 \choose 2}\times5$ ways to move to rolling 1 die, ${3 \choose 1}\times5^2$ ways to rolling 2 dice plus an additional 5 ways where the dice match but don't match the two that were saved, to a total of ${3 \choose 1}\times5^2+5$. Finally theres $5^3-5$ ways to stay at rolling 3 dice.
 
 Total rolls: $6^3=216$
 
 \subsubsection{rolling 5 dice}
-Five dice is quite nice, because all the cases are special in the same way, simply that there isn't a number that it going for. 
+Five dice is quite nice, because all the cases are special in the same way, simply that there isn't a number that it going for.
 
 There are 6 ways to straight roll a Yahtzee.
 
-There are 6 ways to pick a number times ${5 choose 4}$ ways to pick what dice will be that number times 5 things the other die could be, so $6*{5 \choose 4} *5 = 150$.
+There are 6 ways to pick a number times ${5 choose 4}$ ways to pick what dice will be that number times 5 things the other die could be, so $6\times{5 \choose 4} \times5 = 150$.
 
-There are two ways to get a three of a kind, a full house which occurs $6*{5 \choose 3}*5*{2 \choose 2}=300$ ways,and three of a kind and two non matching numbers which occurs $6*{5 \choose 3} *5*4=1200$ ways, so in all it can occur 1500 ways.
+There are two ways to get a three of a kind, a full house which occurs $6\times{5 \choose 3}\times5\times{2 \choose 2}=300$ ways,and three of a kind and two non matching numbers which occurs $6\times{5 \choose 3} \times5\times4=1200$ ways, so in all it can occur 1500 ways.
 
-There are also two ways to get two of a kind, two pairs and another number $6*{5 \choose 2}*5*{4 \choose 2}=1800$ and then there's the two pair and no other matching number case so $6*{5 \choose 2}*5*4*3=3600$ so there's $1800+3600=5400$ ways
+There are also two ways to get two of a kind, two pairs and another number $6\times{5 \choose 2}\times5\times{4 \choose 2}=1800$ and then there's the two pair and no other matching number case so $6\times{5 \choose 2}\times5\times4\times3=3600$ so there's $1800+3600=5400$ ways
 
-There are $6*5*4*3*2=720$ ways to have no matching numbers and then to stay in the current state
+There are $6\times5\times4\times3\times2=720$ ways to have no matching numbers and then to stay in the current state
 
 Total rolls: $6^5=7776$
 
@@ -64,7 +64,7 @@ This is then multiplied by the inverse of the diagonal scaling matrix:
 
 \subsection{Rolling for a specific number}
 
-This one can be fully described in a simple formula, moving from rolling $n$ dice to $r$ dice, given that $n \ge r$ is ${n \choose r} * 5^r$. This makes getting the matrix much easier. Also the number to scale by is $6^n$
+This one can be fully described in a simple formula, moving from rolling $n$ dice to $r$ dice, given that $n \ge r$ is ${n \choose r} \times 5^r$. This makes getting the matrix much easier. Also the number to scale by is $6^n$
 
 \subsubsection{Resulting matricies}
 \[
@@ -96,28 +96,28 @@ This one can be fully described in a simple formula, moving from rolling $n$ dic
 \subsection{Full House}
 
 \subsubsection{Holding no dice}
-The only way to stay rolling no dice is if all are different so $6*5*4*3*2=720$
+The only way to stay rolling no dice is if all are different so $6\times5\times4\times3\times2=720$
 
-The way to go to a single is only if the first two match and the restare unique, so ${5 \choose 2}*6*5*4*3=3600$.
+The way to go to a single is only if the first two match and the restare unique, so ${5 \choose 2}\times6\times5\times4\times3=3600$.
 
-To get 3 of a number and 0 of any other is a Yahtzee, and there's 6 ways to do that. 
+To get 3 of a number and 0 of any other is a Yahtzee, and there's 6 ways to do that.
 
-The 3 of one and 1 of another has ${5 \choose 3}*6*5*4 = 1200 $ ways the first ones can match and the last two don't, and another ${5 \choose 4}*6*5=150$ ways the four dice will match with one odd ball, for a total of 1350 possibilities. 
+The 3 of one and 1 of another has ${5 \choose 3}\times6\times5\times4 = 1200 $ ways the first ones can match and the last two don't, and another ${5 \choose 4}\times6\times5=150$ ways the four dice will match with one odd ball, for a total of 1350 possibilities.
 
-Then there's ${5 \choose 2}*6*{3 \choose 2}*5*2 = 1800$ ways to get exactly 2 pair. 
+Then there's ${5 \choose 2}\times6\times{3 \choose 2}\times5\times2 = 1800$ ways to get exactly 2 pair.
 
-Finally there's ${5 \choose 3}*6*5 =300$ ways to staright roll a Yahtzee. 
+Finally there's ${5 \choose 3}\times6\times5 =300$ ways to staright roll a Yahtzee.
 
 \subsubsection{Holding a Pair and a single}
 There are 2 ways to move to a Full House from here, getting a pair that matches the single, 1 possiblity, or having each die match one of the numbers, 2 possibilities, for a total of 3 possibilities.
 
-There are two wayst o move to two pair, one is matching the single and not the double, ${2 \choose 1} * 1 * 4 = 8$ possibilities, and the other is having the pair match a number other than the single so $ 4 $ possibilities, bringing it to a total of 12. 
+There are two wayst o move to two pair, one is matching the single and not the double, ${2 \choose 1} \times 1 \times 4 = 8$ possibilities, and the other is having the pair match a number other than the single so $ 4 $ possibilities, bringing it to a total of 12.
 
-Then there's ${2 \choose 1} *1 * 5= 10$ ways to move to the 3 and 1 case.
+Then there's ${2 \choose 1} \times1 \times 5= 10$ ways to move to the 3 and 1 case.
 
 Finally there's $ 11$ways to stay  in the current state.
 \subsubsection{Holding 3 of a kind}
-To move to a full house one of 5 pairs is needed, so there's 5 ways to move to full house, and then to stay an pair that matches the three is needed, so 1 way to stay. In addition there are $5^2=25$ ways to moving to holding 3 of a number and 1 of another. 
+To move to a full house one of 5 pairs is needed, so there's 5 ways to move to full house, and then to stay an pair that matches the three is needed, so 1 way to stay. In addition there are $5^2=25$ ways to moving to holding 3 of a number and 1 of another.
 \subsubsection{Holding 3 of one number and 1 of another}
 To change state a specific number is needed, so 1 chance to move up, 5  to stay
 \subsubsection{Holding 2 pair}

@@ -1,15 +1,15 @@
 
 \section{Formulation}
-	
-	We will be using Markov Models to find the probability of the events. 
-Markov models are graphs of events, that have weighted edges with the probability of their occurrence. 
-This graph is then converted into a matrix where the values in row $n$ column $i$ represent the odds of moving from state $n$ to $i$. 
-This is a useful formulation because if you take the product of two of these matrices then it shows the odds of going from one state to another after 2 changes of state. 
+
+	We will be using Markov Models to find the probability of the events.
+Markov models are graphs of events, that have weighted edges with the probability of their occurrence.
+This graph is then converted into a matrix where the values in row $n$ column $i$ represent the odds of moving from state $n$ to $i$.
+This is a useful formulation because if you take the product of two of these matrices then it shows the odds of going from one state to another after 2 changes of state.
 A proof, mostly to convince myself, is in Appendix I for the two by two case.
 
-We use this to represent the probability to get certain outcome from a starting state when the outcome doesn't depend on path. For example to path to getting a Yahtzee doesn't matter, all that matters is the outcome, and the hopefully 50 points that come along with it. 
+We use this to represent the probability to get certain outcome from a starting state when the outcome doesn't depend on path. For example to path to getting a Yahtzee doesn't matter, all that matters is the outcome, and the hopefully 50 points that come along with it.
 
-Now rather than having to find the odds for each possibility and generalize those for n changes of state, we can find the odds of changing from each state to another and the generalsation to n state changes is done for us. 
+Now rather than having to find the odds for each possibility and generalize those for n changes of state, we can find the odds of changing from each state to another and the generalsation to n state changes is done for us.
 
 We also express the markov matrix as the product of two matrices, that we denote as $D$ and $P$. $D$ is a diagonal matrix that has the integer number of possible ways to move from the state of the row/column that it belongs to
 
@@ -17,11 +17,13 @@ We also express the markov matrix as the product of two matrices, that we denote
 
 \begin{figure}
   \includegraphics[width=\linewidth]{image11.jpeg}
-  \label{Figure 1: Probability transition diagram for a 3-state Markov chain}
+  \caption[3-State Markov]{Probability transition diagram for a 3-state Markov chain}
+  \label{state}
 \end{figure}
 
+
 Because we can use a matrix to represent a directed graph, we can use this matrix
-to apply a weight to the edits and predict the outcome of events. Figure 1
+to apply a weight to the edits and predict the outcome of events. Figure \ref{state}
 shows an example of a graph and the corresponding matrix.\footnote{http://www.intechopen.com/books/matlab-a-fundamental-tool-for-scientific-computing-and-engineering-applications-volume-2/wireless-channel-model-with-markov-chains-using-matlab}
 
 To find the odds of a transition, $P$ can be multiplied by the column vector
